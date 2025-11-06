@@ -25,12 +25,13 @@ const paths = {
 
 
     // vendor js fetch node modules
+    
+    node_modules_jquery_countdown: "node_modules/jquery-countdown/dist",
     node_modules_gmap3: "node_modules/gmap3/dist",
     node_modules_imagesloaded: "node_modules/imagesloaded",
     node_modules_isotope: "node_modules/isotope-layout/dist",
     node_modules_iziToast: "node_modules/izitoast/dist/js",
     node_modules_jquery: "node_modules/jquery/dist",
-    node_modules_jquery_countdown: "node_modules/jquery-countdown/dist",
     node_modules_nouislider: "node_modules/nouislider/dist",
     node_modules_owl_carousel: "node_modules/owl.carousel/dist",
     node_modules_photoswipe: "node_modules/photoswipe/dist",
@@ -40,24 +41,25 @@ const paths = {
 
 // vendor js concat
 mix.combine([
+    
+    `${paths.node_modules_jquery_countdown}/jquery.countdown.min.js`,
     `${paths.node_modules_gmap3}/gmap3.min.js`,
     `${paths.node_modules_imagesloaded}/imagesloaded.pkgd.min.js`,
     `${paths.node_modules_isotope}/isotope.pkgd.min.js`,
     `${paths.node_modules_iziToast}/iziToast.min.js`,
     `${paths.node_modules_jquery}/jquery.min.js`,
-    `${paths.node_modules_jquery_countdown}/jquery.countdown.min.js`,
     `${paths.node_modules_nouislider}/nouislider.min.js`,
     `${paths.node_modules_owl_carousel}/owl.carousel.min.js`,
     `${paths.node_modules_photoswipe}/photoswipe.esm.min.js`,
     `${paths.node_modules_popper_js}/popper.min.js`,
     `${paths.node_modules_velocity_animate}/velocity.min.js`,
-    `${paths.src_js_vendor}/*.js`,
+    //`${paths.src_js_vendor}/*.js`,
 ], `${paths.assets_js}/vendor.min.js`);
 
 mix.scripts([
   'node_modules/modernizr/src/Modernizr.js',
   // other vendor JS
-], 'assets/js/Modernizr.min.js');
+], 'assets/js/modernizr.min.js');
 
 // Compile SCSS main
 mix.sass(`${paths.src_scss}/styles.scss`, `${paths.assets_css}/styles.css`)
@@ -67,7 +69,8 @@ mix.sass(`${paths.src_scss}/styles.scss`, `${paths.assets_css}/styles.css`)
 mix.minify(`${paths.assets_css}/styles.css`);
 
 // Compile bootstrap
-mix.sass(`${paths.bootstrap_scss}/bootstrap.scss`, `${paths.src_css_vendor}/bootstrap.min.css`);
+//mix.sass(`${paths.bootstrap_scss}/bootstrap.scss`, `${paths.src_css_vendor}/bootstrap.min.css`);
+mix.sass(`${paths.bootstrap_scss}/scss/bootstrap.scss`, `${paths.src_css_vendor}/bootstrap.min.css`);
 
 // vendor css concat
 mix.combine([
