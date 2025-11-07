@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-const path = require('path');
 const execSync = require('child_process').execSync;
 
 
@@ -25,7 +24,7 @@ const paths = {
 
 
     // vendor js fetch node modules
-    
+
     node_modules_jquery_countdown: "node_modules/jquery-countdown/dist",
     node_modules_gmap3: "node_modules/gmap3/dist",
     node_modules_imagesloaded: "node_modules/imagesloaded",
@@ -41,7 +40,7 @@ const paths = {
 
 // vendor js concat
 mix.combine([
-    
+
     `${paths.node_modules_jquery_countdown}/jquery.countdown.min.js`,
     `${paths.node_modules_gmap3}/gmap3.min.js`,
     `${paths.node_modules_imagesloaded}/imagesloaded.pkgd.min.js`,
@@ -57,13 +56,13 @@ mix.combine([
 ], `${paths.assets_js}/vendor.min.js`);
 
 mix.scripts([
-  'node_modules/modernizr/src/Modernizr.js',
-  // other vendor JS
+    'node_modules/modernizr/src/Modernizr.js',
+    // other vendor JS
 ], 'assets/js/modernizr.min.js');
 
 // Compile SCSS main
 mix.sass(`${paths.src_scss}/styles.scss`, `${paths.assets_css}/styles.css`)
-   .options({ processCssUrls: false });
+    .options({processCssUrls: false});
 
 // minify
 mix.minify(`${paths.assets_css}/styles.css`);
@@ -76,7 +75,7 @@ mix.sass(`${paths.bootstrap_scss}/scss/bootstrap.scss`, `${paths.src_css_vendor}
 mix.combine([
 
     `${paths.src_css_vendor}/*.css`,
-    
+
 ], `${paths.assets_css}/vendor.min.css`);
 
 
@@ -97,7 +96,8 @@ mix.browserSync({
         `${paths.assets_css}/*.css`,
         `${paths.assets_js}/*.js`,
     ],
-    browser: "google chrome"
+    browser: "google chrome",
+    open: false
 });
 
 mix.disableNotifications();
