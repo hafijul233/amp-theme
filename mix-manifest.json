@@ -212,7 +212,8 @@
     "/assets/img/video-covers/02.jpg": "/assets/img/video-covers/02.jpg",
     "/assets/img/video-covers/03.jpg": "/assets/img/video-covers/03.jpg",
     "/assets/js/vendor.min.js": "/assets/js/vendor.min.js",
-    "/assets/js/modernizr.min.js": "/assets/js/modernizr.min.js",
     "/assets/css/styles.min.css": "/assets/css/styles.min.css",
-    "/assets/css/vendor.min.css": "/assets/css/vendor.min.css"
+    "/assets/css/vendor.min.css": "/assets/css/vendor.min.css",
+    "/assets/js/modernizr.min.js": "/assets/js/modernizr.min.js",
+    "/assets/js/card.min.js": "/assets/js/card.min.js"
 }
