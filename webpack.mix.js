@@ -4,9 +4,6 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 
-mix.copyDirectory('src/fonts', 'assets/fonts');
-mix.copyDirectory('src/img', 'assets/img');
-
 const paths = {
     assets: "assets",
     src: "src",
@@ -28,7 +25,7 @@ const paths = {
 
 
     // vendor js fetch node modules
-    
+
     node_modules_jquery_countdown: "node_modules/jquery-countdown/dist",
     node_modules_gmap3: "node_modules/gmap3/dist",
     node_modules_imagesloaded: "node_modules/imagesloaded",
@@ -41,6 +38,12 @@ const paths = {
     node_modules_popper_js: "node_modules/popper.js/dist/",
     node_modules_velocity_animate: "node_modules/velocity-animate"
 };
+
+mix.setPublicPath(paths.assets);
+mix.setResourceRoot(paths.src);
+
+mix.copyDirectory(`${paths.src}/fonts`, `${paths.assets}/fonts`);
+mix.copyDirectory(`${paths.src}/img`, `${paths.assets}/img`);
 
 // vendor js concat
 // mix.combine([
@@ -75,11 +78,9 @@ mix.combine([
 
 
 // Compile SCSS main
-mix.sass(`${paths.src_scss}/styles.scss`, `${paths.assets_css}/styles.css`)
-   .options({ processCssUrls: false });
-
-// minify
-mix.minify(`${paths.assets_css}/styles.css`);
+mix.sass(`${paths.src_scss}/styles.scss`, `${paths.assets_css}/styles.css`, {
+    processCssUrls: false
+}).minify(`${paths.assets_css}/styles.css`, `${paths.assets_css}/styles.min.css`);
 
 // Compile bootstrap
 mix.sass(`${paths.bootstrap_scss}/scss/bootstrap.scss`, `${paths.src_css_vendor}/bootstrap.min.css`);
@@ -117,7 +118,8 @@ mix.browserSync({
         `${paths.assets_css}/*.css`,
         `${paths.assets_js}/*.js`,
     ],
-    browser: "google chrome"
+    browser: "google chrome",
+    open: false
 });
 
 // const webpack = require('webpack');
