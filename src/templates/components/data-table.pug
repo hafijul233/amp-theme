@@ -9,77 +9,121 @@ append config
 
 //- Page Content
 block content
-  .container.padding-bottom-3x.mb-2
+  .container.padding-bottom-3x
     .row
       .col-lg-9.col-md-8.order-md-2
-        h6.text-muted.text-normal.text-uppercase Version 1 (Basic Example)
-        hr.margin-bottom-1x.pb-2
-        .checkout-steps
-          a(href='#') 4. Review
-          a(href='#')
-            span.angle
-            | 3. Payment
-          a(href='#')
-            span.angle
-            | 2. Shipping
-          a(href='#' class='active')
-            span.angle
-            | 1. Address
-        h6.text-muted.text-normal.text-uppercase.padding-top-1x.mt-3 Version 1 (Completed Steps)
-        hr.margin-bottom-1x.pb-2
-        .checkout-steps
-          a(href='#') 4. Review
-          a(href='#' class='active')
-            span.angle
-            | 3. Payment
-          a(href='#' class='completed')
-            span.step-indicator.icon-circle-check
-            span.angle
-            | 2. Shipping
-          a(href='#' class='completed')
-            span.step-indicator.icon-circle-check
-            span.angle
-            | 1. Address
-        h6.text-muted.text-normal.text-uppercase.padding-top-1x.mt-3 Version 2 (Basic Example)
-        hr.margin-bottom-1x.pb-2
-        .steps.d-flex.flex-wrap.flex-sm-nowrap.justify-content-between
-          .step
-            .step-icon-wrap
-              .step-icon: i.pe-7s-cart
-            h4.step-title Confirmed Order
-          .step
-            .step-icon-wrap
-              .step-icon: i.pe-7s-config
-            h4.step-title Processing Order
-          .step
-            .step-icon-wrap
-              .step-icon: i.pe-7s-medal
-            h4.step-title Quality Check
-          .step
-            .step-icon-wrap
-              .step-icon: i.pe-7s-car
-            h4.step-title Product Dispatched
-        h6.text-muted.text-normal.text-uppercase.padding-top-1x.mt-3 Version 2 (Completed Steps)
-        hr.margin-bottom-1x.pb-2
-        .steps.d-flex.flex-wrap.flex-sm-nowrap.justify-content-between
-          .step.completed
-            .step-icon-wrap
-              .step-icon: i.pe-7s-cart
-            h4.step-title Confirmed Order
-          .step.completed
-            .step-icon-wrap
-              .step-icon: i.pe-7s-config
-            h4.step-title Processing Order
-          .step
-            .step-icon-wrap
-              .step-icon: i.pe-7s-medal
-            h4.step-title Quality Check
-          .step
-            .step-icon-wrap
-              .step-icon: i.pe-7s-car
-            h4.step-title Product Dispatched
-          
-      
+
+        //- Basic DataTable
+        h6.text-muted.text-normal.text-uppercase Basic DataTable
+        hr.margin-bottom-1x
+        .table-responsive
+          table#datatable-basic.table.table-striped.table-bordered
+            thead
+              tr
+                th ID
+                th First Name
+                th Last Name
+                th Position
+                th Phone
+            tbody
+              tr
+                td 1
+                td John
+                td Doe
+                td CEO, Founder
+                td +3 555 68 70
+              tr
+                td 2
+                td Anna
+                td Cabana
+                td Designer
+                td +3 434 65 93
+              tr
+                td 3
+                td Kale
+                td Thornton
+                td Developer
+                td +3 285 42 88
+              tr
+                td 4
+                td Jane
+                td Birkins
+                td Support
+                td +3 774 28 50
+
+        //- Server Side DataTable
+        h6.text-muted.text-normal.text-uppercase.padding-top-2x Server Side Rendering
+        hr.margin-bottom-1x
+        .table-responsive
+          table#datatable-server.table.table-striped.table-hover
+            thead
+              tr
+                th ID
+                th Name
+                th Email
+                th Created
+            tbody
+              tr
+                td Loading...
+                td
+                td
+                td
+
+        //- Bootstrap 4 Styled DataTable
+        h6.text-muted.text-normal.text-uppercase.padding-top-2x Bootstrap 4 Theme
+        hr.margin-bottom-1x
+        .table-responsive
+          table#datatable-bs4.table.table-striped.table-sm
+            thead.thead-dark
+              tr
+                th ID
+                th Product
+                th Category
+                th Price
+            tbody
+              tr
+                td 1
+                td Keyboard
+                td Electronics
+                td $120
+              tr
+                td 2
+                td Shoes
+                td Fashion
+                td $80
+              tr
+                td 3
+                td Backpack
+                td Travel
+                td $60
+
+        //- Export Buttons DataTable
+        h6.text-muted.text-normal.text-uppercase.padding-top-2x Export Options
+        hr.margin-bottom-1x
+        .table-responsive
+          table#datatable-export.table.table-bordered
+            thead
+              tr
+                th ID
+                th Country
+                th City
+                th Population
+            tbody
+              tr
+                td 1
+                td USA
+                td New York
+                td 8,800,000
+              tr
+                td 2
+                td Japan
+                td Tokyo
+                td 9,600,000
+              tr
+                td 3
+                td UK
+                td London
+                td 9,500,000
+
       .col-lg-3.col-md-4.order-md-1
-        //- Side Menu
         include ../partials/side-menu
