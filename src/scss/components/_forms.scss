@@ -20,7 +20,7 @@
 
   // Focus state
   &:focus {
-    border-color: $brand-primary;
+    border-color: $primary;
     outline: none;
     color: $gray-dark;
     box-shadow: none !important;
@@ -119,8 +119,8 @@ select.form-control.form-control-sm {
     &::before { box-shadow: none !important; }
   }
   .custom-control-input:checked ~ .custom-control-label::before {
-    border-color: $brand-primary;
-    background-color: $brand-primary;
+    border-color: $primary;
+    background-color: $primary;
   }
   .custom-control-input:disabled ~ .custom-control-label {
     color: $gray;
@@ -187,7 +187,7 @@ select.form-control.form-control-sm {
   }
   .form-control {
     padding-left: 35px;
-    &:focus ~ .input-group-addon { color: $brand-primary; }
+    &:focus ~ .input-group-addon { color: $primary; }
   }
   .input-group-btn {
     right: 10px;
@@ -199,7 +199,7 @@ select.form-control.form-control-sm {
       color: $gray-dark;
       font-size: 1.2em;
       cursor: pointer;
-      &:hover { color: $brand-primary; }
+      &:hover { color: $primary; }
     }
     .btn {
       margin: 0;
@@ -224,7 +224,7 @@ select.form-control.form-control-sm {
     color: $white;
     @include placeholder(rgba($white, .5));
     &:focus {
-      border-color: $brand-primary;
+      border-color: $primary;
       color: $white;
     }
   }
@@ -290,12 +290,12 @@ select.form-control.form-control-sm {
     &:valid,
     &.is-valid {
       border-color: darken($border-color, 1%) !important;
-      &:focus { border-color: $brand-primary !important; }
+      &:focus { border-color: $primary !important; }
     }
     &:invalid,
     &.is-invalid {
-      border-color: $brand-danger !important;
-      &:focus { border-color: $brand-primary !important; }
+      border-color: $danger !important;
+      &:focus { border-color: $primary !important; }
     }
   }
   .custom-file-input:valid ~ .custom-file-label,
@@ -313,8 +313,8 @@ select.form-control.form-control-sm {
         & ~ .custom-control-label {
           color: $body-color;
           &::before {
-            border-color: $brand-primary;
-            background-color: $brand-primary;
+            border-color: $primary;
+            background-color: $primary;
           }
         }
       }

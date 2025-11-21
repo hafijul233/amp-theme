@@ -100,11 +100,11 @@ button:focus { outline: none; }
   color: $white;
   &:hover, &:active, &:focus { color: $white; }
 }
-.btn-primary { @include button-variant($brand-primary); }
-.btn-success { @include button-variant($brand-success); }
-.btn-info { @include button-variant($brand-info); }
-.btn-warning { @include button-variant($brand-warning); }
-.btn-danger { @include button-variant($brand-danger); }
+.btn-primary { @include button-variant($primary); }
+.btn-success { @include button-variant($success); }
+.btn-info { @include button-variant($info); }
+.btn-warning { @include button-variant($warning); }
+.btn-danger { @include button-variant($danger); }
 .btn-white { @include button-variant($white); }
 
 // Outline Button Variants
@@ -113,11 +113,11 @@ button:focus { outline: none; }
   border-color: $border-color;
   &:hover { background-color: $gray-lighter; }
 }
-.btn-outline-primary { @include outline-button-variant($brand-primary); }
-.btn-outline-success { @include outline-button-variant($brand-success); }
-.btn-outline-info { @include outline-button-variant($brand-info); }
-.btn-outline-warning { @include outline-button-variant($brand-warning); }
-.btn-outline-danger { @include outline-button-variant($brand-danger); }
+.btn-outline-primary { @include outline-button-variant($primary); }
+.btn-outline-success { @include outline-button-variant($success); }
+.btn-outline-info { @include outline-button-variant($info); }
+.btn-outline-warning { @include outline-button-variant($warning); }
+.btn-outline-danger { @include outline-button-variant($danger); }
 .btn-outline-white {
   @include outline-button-variant($white);
   &:hover { color: $btn-text-color; }
@@ -126,11 +126,11 @@ button:focus { outline: none; }
 // Link Button Variants
 // Uses @mixin link-button-variant($color)
 .btn-link-secondary { @include link-button-variant($gray-dark); }
-.btn-link-primary { @include link-button-variant($brand-primary); }
-.btn-link-success { @include link-button-variant($brand-success); }
-.btn-link-info { @include link-button-variant($brand-info); }
-.btn-link-warning { @include link-button-variant($brand-warning); }
-.btn-link-danger { @include link-button-variant($brand-danger); }
+.btn-link-primary { @include link-button-variant($primary); }
+.btn-link-success { @include link-button-variant($success); }
+.btn-link-info { @include link-button-variant($info); }
+.btn-link-warning { @include link-button-variant($warning); }
+.btn-link-danger { @include link-button-variant($danger); }
 .btn-link-white { @include link-button-variant($white); }
 .btn-link-secondary,
 .btn-link-primary,

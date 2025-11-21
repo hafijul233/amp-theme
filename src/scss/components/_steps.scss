@@ -58,11 +58,11 @@
     &.completed {
       .step-icon-wrap {
         &::before,
-        &::after { background-color: $brand-primary; }
+        &::after { background-color: $primary; }
       }
       .step-icon {
-        border-color: $brand-primary;
-        background-color: $brand-primary;
+        border-color: $primary;
+        background-color: $primary;
         color: $white;
       }
     }

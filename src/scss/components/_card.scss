@@ -38,10 +38,10 @@
 
 // Background variants
 .card.bg-primary {
-  border-color: darken($brand-primary, 5%);
+  border-color: darken($primary, 5%);
   .card-header {
-    border-bottom-color: darken($brand-primary, 5%);
-    background-color: darken($brand-primary, 2%);
+    border-bottom-color: darken($primary, 5%);
+    background-color: darken($primary, 2%);
   }
 }
 .card.bg-secondary,
@@ -51,31 +51,31 @@
   }
 }
 .card.bg-success {
-  border-color: darken($brand-success, 8%);
+  border-color: darken($success, 8%);
   .card-header {
-    border-bottom-color: darken($brand-success, 8%);
-    background-color: darken($brand-success, 6%);
+    border-bottom-color: darken($success, 8%);
+    background-color: darken($success, 6%);
   }
 }
 .card.bg-info {
-  border-color: darken($brand-info, 12%);
+  border-color: darken($info, 12%);
   .card-header {
-    border-bottom-color: darken($brand-info, 12%);
-    background-color: darken($brand-info, 6%);
+    border-bottom-color: darken($info, 12%);
+    background-color: darken($info, 6%);
   }
 }
 .card.bg-warning {
-  border-color: darken($brand-warning, 12%);
+  border-color: darken($warning, 12%);
   .card-header {
-    border-bottom-color: darken($brand-warning, 12%);
-    background-color: darken($brand-warning, 6%);
+    border-bottom-color: darken($warning, 12%);
+    background-color: darken($warning, 6%);
   }
 }
 .card.bg-danger {
-  border-color: darken($brand-danger, 12%);
+  border-color: darken($danger, 12%);
   .card-header {
-    border-bottom-color: darken($brand-danger, 12%);
-    background-color: darken($brand-danger, 6%);
+    border-bottom-color: darken($danger, 12%);
+    background-color: darken($danger, 6%);
   }
 }
 .card.bg-dark {
