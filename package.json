@@ -34,7 +34,10 @@
     "photoswipe": "^5.4.4",
     "popper.js": "^1.16.1",
     "socicon": "^3.0.5",
-    "velocity-animate": "1.4.2"
+    "velocity-animate": "1.4.2",
+    "select2": "^4.1.0-rc.0",
+    "datatables.net": "^1.13.11",
+    "datatables.net-bs4": "^1.13.11"
   },
   "devDependencies": {
     "browser-sync": "^2",

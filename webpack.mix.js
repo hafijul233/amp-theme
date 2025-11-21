@@ -59,7 +59,11 @@ mix.combine([
     'src/vendor/js/nouislider.min.js',
     'src/vendor/js/owl.carousel.min.js',
     'src/vendor/js/photoswipe-ui-default.min.js',
-    'src/vendor/js/photoswipe.min.js'
+    'src/vendor/js/photoswipe.min.js',
+    'src/vendor/js/select2.full.min.js',
+    'src/vendor/js/jquery.dataTables.min.js',
+    'src/vendor/js/dataTables.bootstrap4.min.js'
+
 ], 'assets/js/vendor.min.js');
 
 

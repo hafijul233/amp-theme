@@ -2,25 +2,24 @@ extends ../partials/layout
 
 //- Override default config variables
 append config
-  - var pageTitle = 'Select2'
+  - var pageTitle = 'Progress Bars'
   - var isNestedFile = true
   - var parentMenu = 'Components'
-  - var breadcrumbs = [{'title': 'Home', 'link': 'index.html'}, {'title': 'Components', 'link': 'accordion.html'}, {'title': 'Select2'}]
-
+  - var breadcrumbs = [{'title': 'Home', 'link': 'index.html'}, {'title': 'Components', 'link': 'accordion.html'}, {'title': 'Progress Bars'}]
 
 //- Page Content
 block content
   .container.padding-bottom-3x.mb-2
     .row
+      //- Main content
       .col-lg-9.col-md-8.order-md-2
-
         h6.text-muted.text-normal.text-uppercase Select2 Components
         hr.margin-bottom-1x
 
         //- Basic Select2
         .form-group
           label(for='normal-pill-input-select') Basic Select2
-          select(id='normal-pill-input-select').form-control.form-control.form-group
+          select#normal-pill-input-select.form-control
             option(value='') Select an option
             option(value='1') Option One
             option(value='2') Option Two
@@ -30,28 +29,29 @@ block content
         //- Multiselect Select2
         .form-group
           label(for='normal-pill-input-multi') Multiselect Select2
-          select(id='normal-pill-input-multi').form-control
-            option(value='1') Select 1
-            option(value='2') Select 1
-            option(value='3') Select 1
-            option(value='4') Select 1
+          select#normal-pill-input-multi.form-control(multiple)
+            option(value='1') Option 1
+            option(value='2') Option 2
+            option(value='3') Option 3
+            option(value='4') Option 4
         hr.margin-bottom-1x
 
         //- Ajax Select2
         .form-group
           label(for='normal-pill-input-Ajax') Ajax Select2
-          select(id='normal-pill-input-Ajax').form-control
+          select#normal-pill-input-Ajax.form-control
             option(value='') Search from server...
         hr.margin-bottom-1x
 
         //- Custom Template Select2
         .form-group
           label(for='normal-pill-input-custom') Custom List Template
-          select(id='normal-pill-input-custom').form-control
+          select#normal-pill-input-custom.form-control
             option(value='html') HTML
             option(value='css') CSS
             option(value='js') JavaScript
         hr.margin-bottom-1x
 
+      //- Sidebar menu
       .col-lg-3.col-md-4.order-md-1
         include ../partials/side-menu
