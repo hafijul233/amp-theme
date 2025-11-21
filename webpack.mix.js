@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-const path = require('path');
 const execSync = require('child_process').execSync;
 
 const paths = {
@@ -7,11 +6,8 @@ const paths = {
     src: "src",
     assets_css: "assets/css",
     assets_js: "assets/js",
-    src_scss: "src/scss",
     src_js: "src/js",
-    src_pug: "src/templates",
     src_css_vendor: "src/vendor/css",
-    src_js_vendor: "src/vendor/js",
     bootstrap_scss: "src/vendor/bootstrap",
 };
 
@@ -22,7 +18,7 @@ mix.copyDirectory(`${paths.src}/fonts`, `${paths.assets}/fonts`);
 mix.copyDirectory(`${paths.src}/img`, `${paths.assets}/img`);
 
 // Compile SCSS main
-mix.sass(`${paths.src_scss}/styles.scss`, `${paths.assets_css}/styles.css`)
+mix.sass(`src/scss/styles.scss`, `${paths.assets_css}/styles.css`)
    .options({ processCssUrls: false });
 mix.minify(`${paths.assets_css}/styles.css`);
 
@@ -65,7 +61,7 @@ mix.combine([
 
 // Pug compile
 mix.before(() => {
-    execSync(`pug ${paths.src_pug} --pretty --out ${paths.assets}`);
+    execSync(`pug src/templates --pretty --out ${paths.assets}`);
 });
 
 // browserSync
@@ -76,7 +72,8 @@ mix.browserSync({
         `${paths.assets_css}/*.css`,
         `${paths.assets_js}/*.js`,
     ],
-    browser: "google chrome"
+    browser: "google chrome",
+    open:false
 });
 
 mix.disableNotifications();
