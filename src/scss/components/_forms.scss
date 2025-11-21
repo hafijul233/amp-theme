@@ -6,7 +6,7 @@
   padding: 0 18px 3px;
   border: 1px solid darken($border-color, 2%);
   border-radius: ceil($input-height / 2);
-  background-color: $white-color;
+  background-color: $white;
   color: $gray-dark;
   font: {
     family: $font-family-base;
@@ -219,17 +219,17 @@ select.form-control.form-control-sm {
 .input-light {
   &.form-control,
   .form-control {
-    border-color: rgba($white-color, .17);
+    border-color: rgba($white, .17);
     background-color: transparent;
-    color: $white-color;
-    @include placeholder(rgba($white-color, .5));
+    color: $white;
+    @include placeholder(rgba($white, .5));
     &:focus {
       border-color: $brand-primary;
-      color: $white-color;
+      color: $white;
     }
   }
   &.input-group {
-    .input-group-addon { color: rgba($white-color, .5); }
+    .input-group-addon { color: rgba($white, .5); }
   }
 }
 

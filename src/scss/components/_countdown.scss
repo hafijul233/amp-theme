@@ -31,10 +31,10 @@
       .days, .hours,
       .minutes, .seconds {
         border-color: $border-light-color;
-        color: $white-color;
+        color: $white;
       }
       .days_ref, .hours_ref,
-      .minutes_ref, .seconds_ref { color: rgba($white-color, .8); }
+      .minutes_ref, .seconds_ref { color: rgba($white, .8); }
     }
   }
 }

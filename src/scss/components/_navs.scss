@@ -35,7 +35,7 @@
   }
   .nav-item.show .nav-link,
   .nav-link.active {
-    border-color: $border-color $border-color $white-color;
+    border-color: $border-color $border-color $white;
     color: darken($gray, 3%);
   }
 }
@@ -87,7 +87,7 @@
   .nav-item.show .nav-link,
   .nav-link.active {
     background-color: $nav-link-active-color !important;
-    color: $white-color;
+    color: $white;
     cursor: default;
   }
   & + .tab-content {

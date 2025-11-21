@@ -25,7 +25,7 @@
   border-bottom: 1px solid $border-light-color;
   .offcanvas-title {
     margin-bottom: 0;
-    color: rgba($white-color, .5);
+    color: rgba($white, .5);
     font: {
       size: $font-size-base;
       weight: $font-weight-headings;
@@ -59,7 +59,7 @@
     padding-left: 8px;
     > .user-name {
       margin-bottom: 2px;
-      color: $white-color;
+      color: $white;
     }
     > span { display: block; }
   }
@@ -71,7 +71,7 @@
 
 // Site Backdrop
 .site-backdrop {
-  @include overlay-block(9980, $white-color, 0);
+  @include overlay-block(9980, $white, 0);
   position: fixed;
   transition: opacity .35s, visibility .35s;
   cursor: pointer;

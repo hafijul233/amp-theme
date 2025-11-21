@@ -17,7 +17,7 @@
     height: 48px;
     margin-top: -24px;
     border: 1px solid $border-color;
-    background-color: $white-color;
+    background-color: $white;
     color: $body-color !important;
     font-size: 20px;
     box-shadow: 0 3px 10px 0 rgba($gray-darker, .2);
@@ -318,7 +318,7 @@
 .noUi-handle {
   border: 4px solid $gray;
   border-radius: 50%;
-  background: $white-color;
+  background: $white;
   cursor: default;
 }
 .price-range-slider {
@@ -360,33 +360,33 @@
 .widget-light-skin {
   .widget-title {
     border-color: $border-light-color;
-    color: rgba($white-color, .5);
+    color: rgba($white, .5);
   }
   &.widget-categories,
   &.widget-links {
     ul > li {
-      &::before { color: rgba($white-color, .15); }
+      &::before { color: rgba($white, .15); }
       > a {
-        color: $white-color;
+        color: $white;
         &:hover { color: $nav-link-hover-color; }
       }
       &.active > a { color: $nav-link-active-color; }
-      > span { color: rgba($white-color, .5); }
+      > span { color: rgba($white, .5); }
     }
   }
   &.widget-featured-posts,
   &.widget-featured-products {
     > .entry {
       .entry-title > a {
-        color: $white-color;
+        color: $white;
         &:hover {  color: $nav-link-hover-color;  }
       }
-      .entry-meta { color: rgba($white-color, .5); }
+      .entry-meta { color: rgba($white, .5); }
     }
   }
   .tag {
     border-color: $border-light-color;
-    color: $white-color !important;
+    color: $white !important;
     &:hover {
       background-color: $widget-tags-hover-bg;
       color: $widget-tags-color !important;

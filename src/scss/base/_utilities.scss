@@ -124,7 +124,7 @@
   padding: 5px !important;
   border: 1px solid $border-color;
   border-radius: $border-radius-lg;
-  background-color: $white-color;
+  background-color: $white;
   &.rounded-circle { border-radius: 50%; }
 }
 
@@ -169,13 +169,13 @@
 .text-gray-dark { color: $gray-darker !important; }
 .text-body { color: $gray-dark !important; }
 .text-light,
-.text-white { color: $white-color !important; }
+.text-white { color: $white !important; }
 .text-highlighted { background-color: $highlight-color !important; }
 .text-decoration-none { text-decoration: none !important; }
 
 // Text decorations
 .text-crossed { text-decoration: line-through !important; }
-.text-shadow { text-shadow: 0 1px rgba($black-color, .5) !important; }
+.text-shadow { text-shadow: 0 1px rgba($black, .5) !important; }
 
 // Font Weight
 .text-black { font-weight: 900 !important; }
@@ -195,7 +195,7 @@
 .bg-faded,
 .bg-secondary { background-color: $gray-lighter !important; }
 .bg-dark { background-color: $gray-darker !important; }
-.bg-white { background-color: $white-color !important; }
+.bg-white { background-color: $white !important; }
 
 // Background Properties
 .bg-no-repeat { background-repeat: no-repeat; }

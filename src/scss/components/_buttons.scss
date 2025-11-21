@@ -97,15 +97,15 @@ button:focus { outline: none; }
 .btn-info,
 .btn-warning,
 .btn-danger {
-  color: $white-color;
-  &:hover, &:active, &:focus { color: $white-color; }
+  color: $white;
+  &:hover, &:active, &:focus { color: $white; }
 }
 .btn-primary { @include button-variant($brand-primary); }
 .btn-success { @include button-variant($brand-success); }
 .btn-info { @include button-variant($brand-info); }
 .btn-warning { @include button-variant($brand-warning); }
 .btn-danger { @include button-variant($brand-danger); }
-.btn-white { @include button-variant($white-color); }
+.btn-white { @include button-variant($white); }
 
 // Outline Button Variants
 // Uses @mixin outline-button-variant($color)
@@ -119,7 +119,7 @@ button:focus { outline: none; }
 .btn-outline-warning { @include outline-button-variant($brand-warning); }
 .btn-outline-danger { @include outline-button-variant($brand-danger); }
 .btn-outline-white {
-  @include outline-button-variant($white-color);
+  @include outline-button-variant($white);
   &:hover { color: $btn-text-color; }
 }
 
@@ -131,7 +131,7 @@ button:focus { outline: none; }
 .btn-link-info { @include link-button-variant($brand-info); }
 .btn-link-warning { @include link-button-variant($brand-warning); }
 .btn-link-danger { @include link-button-variant($brand-danger); }
-.btn-link-white { @include link-button-variant($white-color); }
+.btn-link-white { @include link-button-variant($white); }
 .btn-link-secondary,
 .btn-link-primary,
 .btn-link-success,
@@ -221,8 +221,8 @@ button:focus { outline: none; }
   height: $btn-height;
   transition: bottom 400ms cubic-bezier(.68, -.55, .265, 1.55), opacity .3s, background-color .3s, border-color .3s;
   border-radius: 50%;
-  background-color: rgba($black-color, .3);
-  color: $white-color;
+  background-color: rgba($black, .3);
+  color: $white;
   font-size: $font-size-lead;
   line-height: ($btn-height - 5);
   opacity: 0;
@@ -232,10 +232,10 @@ button:focus { outline: none; }
     decoration: none;
   }
   &:hover {
-    background-color: rgba($black-color, .8);
-    color: $white-color;
+    background-color: rgba($black, .8);
+    color: $white;
   }
-  &:focus, &:active { color: $white-color; }
+  &:focus, &:active { color: $white; }
   &.visible {
     bottom: 14px;
     opacity: 1;
@@ -261,7 +261,7 @@ button:focus { outline: none; }
   border-radius: $border-radius-base;
   background: {
     position: center left 12px;
-    color: $white-color;
+    color: $white;
     size: 24px 24px;
     repeat: no-repeat;
   }
@@ -299,9 +299,9 @@ button:focus { outline: none; }
     border-color: $border-light-color;
     background-color: transparent;
     .mb-subtitle,
-    .mb-title { color: $white-color; }
+    .mb-title { color: $white; }
     .mb-subtitle { opacity: .55; }
-    &:hover { background-color: rgba($white-color, .06); }
+    &:hover { background-color: rgba($white, .06); }
     &.apple-button {
       background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMDUgMzA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMDUgMzA1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnIGlkPSJYTUxJRF8yMjhfIj4KCTxwYXRoIGlkPSJYTUxJRF8yMjlfIiBkPSJNNDAuNzM4LDExMi4xMTljLTI1Ljc4NSw0NC43NDUtOS4zOTMsMTEyLjY0OCwxOS4xMjEsMTUzLjgyQzc0LjA5MiwyODYuNTIzLDg4LjUwMiwzMDUsMTA4LjIzOSwzMDUgICBjMC4zNzIsMCwwLjc0NS0wLjAwNywxLjEyNy0wLjAyMmM5LjI3My0wLjM3LDE1Ljk3NC0zLjIyNSwyMi40NTMtNS45ODRjNy4yNzQtMy4xLDE0Ljc5Ny02LjMwNSwyNi41OTctNi4zMDUgICBjMTEuMjI2LDAsMTguMzksMy4xMDEsMjUuMzE4LDYuMDk5YzYuODI4LDIuOTU0LDEzLjg2MSw2LjAxLDI0LjI1Myw1LjgxNWMyMi4yMzItMC40MTQsMzUuODgyLTIwLjM1Miw0Ny45MjUtMzcuOTQxICAgYzEyLjU2Ny0xOC4zNjUsMTguODcxLTM2LjE5NiwyMC45OTgtNDMuMDFsMC4wODYtMC4yNzFjMC40MDUtMS4yMTEtMC4xNjctMi41MzMtMS4zMjgtMy4wNjZjLTAuMDMyLTAuMDE1LTAuMTUtMC4wNjQtMC4xODMtMC4wNzggICBjLTMuOTE1LTEuNjAxLTM4LjI1Ny0xNi44MzYtMzguNjE4LTU4LjM2Yy0wLjMzNS0zMy43MzYsMjUuNzYzLTUxLjYwMSwzMC45OTctNTQuODM5bDAuMjQ0LTAuMTUyICAgYzAuNTY3LTAuMzY1LDAuOTYyLTAuOTQ0LDEuMDk2LTEuNjA2YzAuMTM0LTAuNjYxLTAuMDA2LTEuMzQ5LTAuMzg2LTEuOTA1Yy0xOC4wMTQtMjYuMzYyLTQ1LjYyNC0zMC4zMzUtNTYuNzQtMzAuODEzICAgYy0xLjYxMy0wLjE2MS0zLjI3OC0wLjI0Mi00Ljk1LTAuMjQyYy0xMy4wNTYsMC0yNS41NjMsNC45MzEtMzUuNjExLDguODkzYy02LjkzNiwyLjczNS0xMi45MjcsNS4wOTctMTcuMDU5LDUuMDk3ICAgYy00LjY0MywwLTEwLjY2OC0yLjM5MS0xNy42NDUtNS4xNTljLTkuMzMtMy43MDMtMTkuOTA1LTcuODk5LTMxLjEtNy44OTljLTAuMjY3LDAtMC41MywwLjAwMy0wLjc4OSwwLjAwOCAgIEM3OC44OTQsNzMuNjQzLDU0LjI5OCw4OC41MzUsNDAuNzM4LDExMi4xMTl6IiBmaWxsPSIjRkZGRkZGIi8+Cgk8cGF0aCBpZD0iWE1MSURfMjMwXyIgZD0iTTIxMi4xMDEsMC4wMDJjLTE1Ljc2MywwLjY0Mi0zNC42NzIsMTAuMzQ1LTQ1Ljk3NCwyMy41ODNjLTkuNjA1LDExLjEyNy0xOC45ODgsMjkuNjc5LTE2LjUxNiw0OC4zNzkgICBjMC4xNTUsMS4xNywxLjEwNywyLjA3MywyLjI4NCwyLjE2NGMxLjA2NCwwLjA4MywyLjE1LDAuMTI1LDMuMjMyLDAuMTI2YzE1LjQxMywwLDMyLjA0LTguNTI3LDQzLjM5NS0yMi4yNTcgICBjMTEuOTUxLTE0LjQ5OCwxNy45OTQtMzMuMTA0LDE2LjE2Ni00OS43N0MyMTQuNTQ0LDAuOTIxLDIxMy4zOTUtMC4wNDksMjEyLjEwMSwwLjAwMnoiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
     }
@@ -327,7 +327,7 @@ button:focus { outline: none; }
   color: #3b5998;
   &:hover {
     background-color: #3b5998;
-    color: $white-color;
+    color: $white;
   }
 }
 .twitter-btn {
@@ -336,7 +336,7 @@ button:focus { outline: none; }
   color: #55acee;
   &:hover {
     background-color: #55acee;
-    color: $white-color;
+    color: $white;
   }
 }
 .google-btn {
@@ -346,6 +346,6 @@ button:focus { outline: none; }
   > i { font-size: 1.3em; }
   &:hover {
     background-color: #dd4b39;
-    color: $white-color;
+    color: $white;
   }
 }
