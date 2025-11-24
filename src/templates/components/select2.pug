@@ -2,10 +2,10 @@ extends ../partials/layout
 
 //- Override default config variables
 append config
-  - var pageTitle = 'Progress Bars'
+  - var pageTitle = 'Select2'
   - var isNestedFile = true
   - var parentMenu = 'Components'
-  - var breadcrumbs = [{'title': 'Home', 'link': 'index.html'}, {'title': 'Components', 'link': 'accordion.html'}, {'title': 'Progress Bars'}]
+  - var breadcrumbs = [{'title': 'Home', 'link': 'index.html'}, {'title': 'Components', 'link': 'accordion.html'}, {'title': 'Select2'}]
 
 //- Page Content
 block content
@@ -19,39 +19,104 @@ block content
         //- Basic Select2
         .form-group
           label(for='normal-pill-input-select') Basic Select2
-          select#normal-pill-input-select.form-control
+          select#normal-pill-input-select.form-control.basic-select
             option(value='') Select an option
-            option(value='1') Option One
-            option(value='2') Option Two
-            option(value='3') Option Three
+            option(value='Alaska') Alaska
+            option(value='Hawaii') Hawaii
+            option(value='Oregon') Oregon
         hr.margin-bottom-1x
+        //- Basic option group
+        .form-group
+          label(for='normal-pill-input-multi-simple') Option Group Select2
+          select#normal-pill-input-multi-simple.form-control.multi-select(multiple)
+            option(value="") Select a State
+
+            optgroup(label="Alaskan/Hawaiian Time Zone")
+              option(value="alaska") Alaska
+              option(value="hawaii") Hawaii
+
+            optgroup(label="Pacific Time Zone")
+              option(value="california") California
+              option(value="nevada") Nevada
+              option(value="oregon") Oregon
+              option(value="washington") Washington
+          hr.margin-bottom-1x
 
         //- Multiselect Select2
         .form-group
           label(for='normal-pill-input-multi') Multiselect Select2
-          select#normal-pill-input-multi.form-control(multiple)
-            option(value='1') Option 1
-            option(value='2') Option 2
-            option(value='3') Option 3
-            option(value='4') Option 4
+          select#normal-pill-input-multi.form-control.multi-select(multiple)
+            option(value='California') California
+            option(value='Nevada') Nevada
+            option(value='Oregon') Oregon
+            option(value='Washington') Washington
         hr.margin-bottom-1x
 
-        //- Ajax Select2
+        //- Disabled Multi Select
         .form-group
-          label(for='normal-pill-input-Ajax') Ajax Select2
-          select#normal-pill-input-Ajax.form-control
-            option(value='') Search from server...
+          label(for="disabled-multi") Disabled Multi Select
+          select#disabled-multi.js-example-disabled-multi.js-states.form-control(multiple="multiple" disabled="disabled")
+            option(value="Alaska") Alaska
+            option(value="Hawaii") Hawaii
+            option(value="Oregon") Oregon
+
+        .buttons
+          button.btn.btn-success.js-programmatic-enable(type="button") Enable Selects
+          button.btn.btn-danger.js-programmatic-disable(type="button" style="margin-left: 10px") Disable Selects
+
         hr.margin-bottom-1x
 
         //- Custom Template Select2
         .form-group
           label(for='normal-pill-input-custom') Custom List Template
-          select#normal-pill-input-custom.form-control
+          select#normal-pill-input-custom.form-control.basic-select
             option(value='html') HTML
             option(value='css') CSS
             option(value='js') JavaScript
         hr.margin-bottom-1x
 
-      //- Sidebar menu
+      //- Sidebar
       .col-lg-3.col-md-4.order-md-1
         include ../partials/side-menu
+
+
+      //- Scripts Section (MUST be outside .row)
+      block scripts
+        //- Select2 CSS
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+
+        //- jQuery
+        script(src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js")
+
+        //- Select2 JS
+        script(src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js")
+
+        //- Initialization Script
+        script.
+          $(document).ready(function () {
+
+            // ==== BASIC SELECT2 (fixed option names) ====
+            $('.basic-select').select2({
+              placeholder: "Select an option",
+              allowClear: true,
+              templateResult: function (data) { return data.text; },
+              templateSelection: function (data) { return data.text; }
+            });
+
+            // ==== MULTI SELECT ====
+            $('.multi-select').select2({
+              placeholder: "Select options"
+            });
+
+            // ==== DISABLED SELECT2 ====
+            $(".js-example-disabled-multi").select2();
+
+            $(".js-programmatic-enable").on("click", function () {
+              $(".js-example-disabled-multi").prop("disabled", false);
+            });
+
+            $(".js-programmatic-disable").on("click", function () {
+              $(".js-example-disabled-multi").prop("disabled", true);
+            });
+
+          });
