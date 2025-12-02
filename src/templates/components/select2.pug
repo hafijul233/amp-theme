@@ -7,51 +7,143 @@ append config
   - var parentMenu = 'Components'
   - var breadcrumbs = [{'title': 'Home', 'link': 'index.html'}, {'title': 'Components', 'link': 'accordion.html'}, {'title': 'Select2'}]
 
-
 //- Page Content
 block content
   .container-fluid.padding-bottom-3x.mb-2
     .row
+      //- Main content
       .col-lg-9.col-md-8.order-md-2
-
         h6.text-muted.text-normal.text-uppercase Select2 Components
         hr.margin-bottom-1x
 
         //- Basic Select2
         .form-group
-          label(for='normal-pill-input-select') Basic Select2
-          select(id='normal-pill-input-select').form-control.form-control.form-group
+          label.form-label(style='padding-left:0' for='normal-pill-input-select') Basic Select2
+          select#normal-pill-input-select.form-control.basic-select
             option(value='') Select an option
-            option(value='1') Option One
-            option(value='2') Option Two
-            option(value='3') Option Three
+            option(value='Alaska') Alaska
+            option(value='Hawaii') Hawaii
+            option(value='Oregon') Oregon
         hr.margin-bottom-1x
+        //- Basic option group
+        .form-group
+          label.form-label(style='padding-left:0' for='normal-pill-input-multi-simple') Option Group Select2
+          select#normal-pill-input-multi-simple.form-control.multi-select(multiple)
+            option(value="") Select a State
+
+            optgroup(label="Alaskan/Hawaiian Time Zone")
+              option(value="alaska") Alaska
+              option(value="hawaii") Hawaii
+
+            optgroup(label="Pacific Time Zone")
+              option(value="california") California
+              option(value="nevada") Nevada
+              option(value="oregon") Oregon
+              option(value="washington") Washington
+          hr.margin-bottom-1x
 
         //- Multiselect Select2
         .form-group
-          label(for='normal-pill-input-multi') Multiselect Select2
-          select(id='normal-pill-input-multi').form-control
-            option(value='1') Select 1
-            option(value='2') Select 1
-            option(value='3') Select 1
-            option(value='4') Select 1
+          label.form-label(style='padding-left:0' for='normal-pill-input-multi') Multiselect Select2
+          select#normal-pill-input-multi.form-control.multi-select(multiple)
+            option(value='California') California
+            option(value='Nevada') Nevada
+            option(value='Oregon') Oregon
+            option(value='Washington') Washington
         hr.margin-bottom-1x
 
-        //- Ajax Select2
+        //- Disabled Multi Select
         .form-group
-          label(for='normal-pill-input-Ajax') Ajax Select2
-          select(id='normal-pill-input-Ajax').form-control
-            option(value='') Search from server...
+          label.form-label(style='padding-left:0' for="disabled-multi") Disabled Multi Select
+          select#disabled-multi.js-example-disabled-multi.js-states.form-control(multiple="multiple" disabled="disabled")
+            option(value="Alaska") Alaska
+            option(value="Hawaii") Hawaii
+            option(value="Oregon") Oregon
+
+        .buttons
+          button.btn.btn-success.js-programmatic-enable(type="button") Enable Selects
+          button.btn.btn-danger.js-programmatic-disable(type="button" style="margin-left: 10px") Disable Selects
+
         hr.margin-bottom-1x
 
         //- Custom Template Select2
         .form-group
-          label(for='normal-pill-input-custom') Custom List Template
-          select(id='normal-pill-input-custom').form-control
+          label.form-label(style='padding-left:0' for='normal-pill-input-custom') Custom List Template
+          select#normal-pill-input-custom.form-control.basic-select
             option(value='html') HTML
             option(value='css') CSS
             option(value='js') JavaScript
         hr.margin-bottom-1x
 
+        
+        .select2-wrapper
+          label.form-label(for="mySelect2" style="padding-left:0") Select2 AJAX Example
+          select#mySelect2.js-data-example-ajax.form-control
+        hr.margin-bottom-1x
+
+      //- Sidebar
       .col-lg-3.col-md-4.order-md-1
         include ../partials/side-menu
+
+
+      //- Scripts Section (MUST be outside .row)
+      block scripts
+        //- Select2 CSS
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+
+        //- jQuery
+        script(src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js")
+
+        //- Select2 JS
+        script(src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js")
+
+        //- Initialization Script
+        script.
+          $(document).ready(function () {
+
+            // ==== BASIC SELECT2 (fixed option names) ====
+            $('.basic-select').select2({
+              placeholder: "Select an option",
+              allowClear: true,
+              templateResult: function (data) { return data.text; },
+              templateSelection: function (data) { return data.text; }
+            });
+
+            // ==== MULTI SELECT ====
+            $('.multi-select').select2({
+              placeholder: "Select options"
+            });
+
+            // ==== DISABLED SELECT2 ====
+            $(".js-example-disabled-multi").select2();
+
+            $(".js-programmatic-enable").on("click", function () {
+              $(".js-example-disabled-multi").prop("disabled", false);
+            });
+
+            $(".js-programmatic-disable").on("click", function () {
+              $(".js-example-disabled-multi").prop("disabled", true);
+            });
+
+          });
+
+          $('#mySelect2').select2({
+            ajax: {
+              url: 'https://api.github.com/orgs/select2/repos',
+              data: function (params) {
+                var query = {
+                  search: params.term,
+                  type: 'public'
+                };
+                return query;
+              },
+              processResults: function (data) {
+                return {
+                  results: data.map(function (repo) {
+                    return { id: repo.id, text: repo.name };
+                  })
+                };
+              }
+            }
+          });
+          

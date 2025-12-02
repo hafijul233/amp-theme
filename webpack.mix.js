@@ -35,6 +35,7 @@ mix.combine([
 mix.js(`${paths.src_js}/scripts.js`, `${paths.assets_js}/scripts.min.js`);
 mix.copy(`${paths.src_js}/modernizr.min.js`, `${paths.assets_js}/modernizr.min.js`);
 mix.copy(`${paths.src_js}/card.min.js`, `${paths.assets_js}/card.min.js`);
+mix.copy(`${paths.src_js}/dataTable.json`, `${paths.assets_js}/dataTable.json`);
 //mix.copy(`${paths.src_js}/vendor.min.js`, `${paths.assets_js}/vendor.min.js`);
 
 // vendor js concat
@@ -55,7 +56,11 @@ mix.combine([
     'src/vendor/js/nouislider.min.js',
     'src/vendor/js/owl.carousel.min.js',
     'src/vendor/js/photoswipe-ui-default.min.js',
-    'src/vendor/js/photoswipe.min.js'
+    'src/vendor/js/photoswipe.min.js',
+    'src/vendor/js/select2.full.min.js',
+    'src/vendor/js/jquery.dataTables.min.js',
+    'src/vendor/js/dataTables.bootstrap4.min.js'
+
 ], 'assets/js/vendor.min.js');
 
 
