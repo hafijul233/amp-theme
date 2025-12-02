@@ -75,6 +75,12 @@ block content
             option(value='js') JavaScript
         hr.margin-bottom-1x
 
+        
+        .select2-wrapper
+          label.form-label(for="mySelect2" style="padding-left:0") Select2 AJAX Example
+          select#mySelect2.js-data-example-ajax.form-control
+        hr.margin-bottom-1x
+
       //- Sidebar
       .col-lg-3.col-md-4.order-md-1
         include ../partials/side-menu
@@ -120,3 +126,24 @@ block content
             });
 
           });
+
+          $('#mySelect2').select2({
+            ajax: {
+              url: 'https://api.github.com/orgs/select2/repos',
+              data: function (params) {
+                var query = {
+                  search: params.term,
+                  type: 'public'
+                };
+                return query;
+              },
+              processResults: function (data) {
+                return {
+                  results: data.map(function (repo) {
+                    return { id: repo.id, text: repo.name };
+                  })
+                };
+              }
+            }
+          });
+          

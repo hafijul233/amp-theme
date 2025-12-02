@@ -39,6 +39,7 @@ mix.combine([
 mix.js(`${paths.src_js}/scripts.js`, `${paths.assets_js}/scripts.min.js`);
 mix.copy(`${paths.src_js}/modernizr.min.js`, `${paths.assets_js}/modernizr.min.js`);
 mix.copy(`${paths.src_js}/card.min.js`, `${paths.assets_js}/card.min.js`);
+mix.copy(`${paths.src_js}/dataTable.json`, `${paths.assets_js}/dataTable.json`);
 //mix.copy(`${paths.src_js}/vendor.min.js`, `${paths.assets_js}/vendor.min.js`);
 
 // vendor js concat
