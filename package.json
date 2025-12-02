@@ -27,14 +27,17 @@
     "izitoast": "^1.4.0",
     "jquery": "^3.7.1",
     "jquery-countdown": "^2.2.0",
-    "modernizr": "^3.13.0",
+    "modernizr": "3.3.1",
     "nouislider": "^15.7.0",
     "owl.carousel": "^2.3.4",
     "pe7-icon": "^1.0.4",
     "photoswipe": "^5.4.4",
     "popper.js": "^1.16.1",
     "socicon": "^3.0.5",
-    "velocity-animate": "^2.0.6"
+    "velocity-animate": "1.4.2",
+    "select2": "^4.1.0-rc.0",
+    "datatables.net": "^1.13.11",
+    "datatables.net-bs4": "^1.13.11"
   },
   "devDependencies": {
     "browser-sync": "^2",
