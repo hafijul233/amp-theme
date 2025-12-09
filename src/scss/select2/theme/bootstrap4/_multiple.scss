@@ -19,11 +19,11 @@
       padding: 0;
       padding-right: $input-padding-x;
       margin-top: calc(#{$input-padding-y} - 2px);
-      margin-right: $input-padding-x / 2;
+      margin-right: 4px;
       color: $input-color;
       cursor: pointer;
-      border: 1px solid darken($light, 20%);
-      @include border-radius($input-border-radius-sm);
+      border: $input-border-width solid $input-border-color;
+      @include border-radius($input-border-radius);
     }
 
     // search field
@@ -39,15 +39,17 @@
     // x button of each selected item in input box
     .select2-selection__choice__remove {
       float: left;
-      padding-right: 3px;
-      padding-left: 3px;
-      margin-right: 1px;
+      padding-right: $input-border-radius / 2;
+      padding-left: $input-border-radius / 2;
+      margin-right: 12px;
       margin-left: 3px;
       font-weight: 700;
-      color: darken($light, 20%);
+      color: darken($light, 30%);
+      border: $input-border-width solid $input-border-color;
       &:hover {
         color: $dark;
       }
+      @include border-radius($input-border-radius);
     }
 
     // all clear button
