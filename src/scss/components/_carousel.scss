@@ -209,7 +209,7 @@
       margin: 0;
       padding-bottom: $grid-vertical-step;
       .owl-dot {
-        background-color: $white-color;
+        background-color: $white;
         opacity: .5;
         &.active { opacity: 1; }
       }

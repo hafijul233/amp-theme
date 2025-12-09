@@ -9,7 +9,7 @@ append config
 
 //- Page Content
 block content
-  .container.padding-bottom-3x.mb-2
+  .container-fluid.padding-bottom-3x.mb-2
     .row
       //- Main content
       .col-lg-9.col-md-8.order-md-2
@@ -103,6 +103,7 @@ block content
 
             // ==== BASIC SELECT2 (fixed option names) ====
             $('.basic-select').select2({
+              theme: 'bootstrap4',
               placeholder: "Select an option",
               allowClear: true,
               templateResult: function (data) { return data.text; },
@@ -111,11 +112,14 @@ block content
 
             // ==== MULTI SELECT ====
             $('.multi-select').select2({
+              theme: 'bootstrap4',
               placeholder: "Select options"
             });
 
             // ==== DISABLED SELECT2 ====
-            $(".js-example-disabled-multi").select2();
+            $(".js-example-disabled-multi").select2({
+              theme: 'bootstrap4',
+            });
 
             $(".js-programmatic-enable").on("click", function () {
               $(".js-example-disabled-multi").prop("disabled", false);
@@ -128,6 +132,7 @@ block content
           });
 
           $('#mySelect2').select2({
+            theme: 'bootstrap4',
             ajax: {
               url: 'https://api.github.com/orgs/select2/repos',
               data: function (params) {

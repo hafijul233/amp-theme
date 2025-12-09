@@ -54,18 +54,18 @@
     position: absolute;
     top: 0;
     left: 0;
-    border-bottom-color: rgba($white-color, .15);
-    background-color: rgba($white-color, .05);
+    border-bottom-color: rgba($white, .15);
+    background-color: rgba($white, .05);
     .topbar-column {
-      a:not(.social-button):not(.dropdown-item), span, p { color: $white-color; }
+      a:not(.social-button):not(.dropdown-item), span, p { color: $white; }
       a:not(.social-button):not(.dropdown-item):hover {
         color: $nav-link-hover-color;
       }
     }
     .lang-currency-switcher-wrap .lang-currency-switcher > .currency {
-      border-left-color: rgba($white-color, .15);
+      border-left-color: rgba($white, .15);
     }
-    .dropdown-toggle::after { color: $white-color; }
+    .dropdown-toggle::after { color: $white; }
   }
   &.topbar-dark {
     position: relative;
@@ -149,7 +149,7 @@
   width: 100%;
   height: 100%;
   transition: .3s;
-  background-color: $white-color;
+  background-color: $white;
   opacity: 0;
   visibility: hidden;
   z-index: 10;
@@ -163,7 +163,7 @@
       left: 30px;
     }
     border: 0;
-    background-color: $white-color;
+    background-color: $white;
     color: $body-color;
     font-size: $font-size-base;
     &:focus { outline: 0; }
@@ -226,7 +226,7 @@
   width: 100%;
   min-height: $navbar-min-height;
   border-bottom: 1px solid $border-color;
-  background-color: $white-color;
+  background-color: $white;
   z-index: 9000;
   &.navbar-stuck {
     position: fixed;
@@ -520,7 +520,7 @@
     position: absolute;
     top: 12px;
     right: 0;
-    color: $brand-danger;
+    color: $danger;
     font-size: $font-size-xs;
     line-height: 1;
     cursor: pointer;
@@ -561,25 +561,25 @@
 .navbar-dark {
   position: absolute;
   top: 40px;
-  border-bottom-color: rgba($white-color, .15);
+  border-bottom-color: rgba($white, .15);
   background-color: transparent;
   .offcanvas-toggle {
-    border-right-color: rgba($white-color, .15);
-    color: $white-color;
+    border-right-color: rgba($white, .15);
+    color: $white;
     &:hover { color: $nav-link-hover-color; }
   }
   .site-menu > ul > li {
-    > a { color: $white-color; }
+    > a { color: $white; }
     &:hover > a { color: $nav-link-hover-color; }
     &.active > a { color: $nav-link-active-color; }
   }
   .toolbar {
     .search, .account, .cart {
-      border-color: rgba($white-color, .15);
-      color: $white-color;
-      &:hover { background-color: rgba($white-color, .07); }
+      border-color: rgba($white, .15);
+      color: $white;
+      &:hover { background-color: rgba($white, .07); }
     }
-    .cart > .subtotal { border-left-color: rgba($white-color, .15); }
+    .cart > .subtotal { border-left-color: rgba($white, .15); }
     .toolbar-dropdown-group { color: $body-color; }
   }
 }

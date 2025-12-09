@@ -15,14 +15,14 @@
     top: 10px;
     bottom: $grid-vertical-step; // ~24px
   }
-  color: rgba($white-color, .5);
+  color: rgba($white, .5);
   font: {
     size: $font-size-sm;
     weight: normal;
   }
   > a {
     transition: color .25s;
-    color: rgba($white-color, .5);
+    color: rgba($white, .5);
     text-decoration: none;
     &:hover { color: $link-hover-color; }
   }

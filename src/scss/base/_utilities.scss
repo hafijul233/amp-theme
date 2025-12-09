@@ -124,7 +124,7 @@
   padding: 5px !important;
   border: 1px solid $border-color;
   border-radius: $border-radius-lg;
-  background-color: $white-color;
+  background-color: $white;
   &.rounded-circle { border-radius: 50%; }
 }
 
@@ -161,21 +161,21 @@
 
 // Text Colors
 .text-muted { color: $gray !important; }
-.text-primary { color: $brand-primary !important; }
-.text-info { color: $brand-info !important; }
-.text-warning { color: $brand-warning !important; }
-.text-success { color: $brand-success !important; }
-.text-danger { color: $brand-danger !important; }
+.text-primary { color: $primary !important; }
+.text-info { color: $info !important; }
+.text-warning { color: $warning !important; }
+.text-success { color: $success !important; }
+.text-danger { color: $danger !important; }
 .text-gray-dark { color: $gray-darker !important; }
 .text-body { color: $gray-dark !important; }
 .text-light,
-.text-white { color: $white-color !important; }
+.text-white { color: $white !important; }
 .text-highlighted { background-color: $highlight-color !important; }
 .text-decoration-none { text-decoration: none !important; }
 
 // Text decorations
 .text-crossed { text-decoration: line-through !important; }
-.text-shadow { text-shadow: 0 1px rgba($black-color, .5) !important; }
+.text-shadow { text-shadow: 0 1px rgba($black, .5) !important; }
 
 // Font Weight
 .text-black { font-weight: 900 !important; }
@@ -186,16 +186,16 @@
 .text-uppercase { letter-spacing: .04em; }
 
 // Background Colors
-.bg-primary { background-color: $brand-primary !important; }
-.bg-success { background-color: $brand-success !important; }
-.bg-info { background-color: $brand-info !important; }
-.bg-warning { background-color: $brand-warning !important; }
-.bg-danger { background-color: $brand-danger !important; }
+.bg-primary { background-color: $primary !important; }
+.bg-success { background-color: $success !important; }
+.bg-info { background-color: $info !important; }
+.bg-warning { background-color: $warning !important; }
+.bg-danger { background-color: $danger !important; }
 .bg-inverse { background-color: $gray-darker !important; }
 .bg-faded,
 .bg-secondary { background-color: $gray-lighter !important; }
 .bg-dark { background-color: $gray-darker !important; }
-.bg-white { background-color: $white-color !important; }
+.bg-white { background-color: $white !important; }
 
 // Background Properties
 .bg-no-repeat { background-repeat: no-repeat; }
@@ -204,11 +204,11 @@
 .bg-cover { background-size: cover; }
 
 // Border Colors
-.border-primary { border-color: $brand-primary !important; }
-.border-success { border-color: $brand-success !important; }
-.border-info { border-color: $brand-info !important; }
-.border-warning { border-color: $brand-warning !important; }
-.border-danger { border-color: $brand-danger !important; }
+.border-primary { border-color: $primary !important; }
+.border-success { border-color: $success !important; }
+.border-info { border-color: $info !important; }
+.border-warning { border-color: $warning !important; }
+.border-danger { border-color: $danger !important; }
 .border-secondary { border-color: $gray-lighter !important; }
 .border-dark { border-color: $gray-darker !important; }
 

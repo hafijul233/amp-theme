@@ -12,7 +12,7 @@
   padding: 18px;
   border: 1px solid $border-color;
   border-radius: $border-radius-lg;
-  background-color: $white-color;
+  background-color: $white;
   .product-thumb {
     display: block;
     width: 100%;
@@ -60,7 +60,7 @@
         padding-left: 1px;
         border-radius: 50%;
         > i { font-size: 1.2em; }
-        &.active { color: $brand-danger; }
+        &.active { color: $danger; }
       }
     }
   }
@@ -134,7 +134,7 @@
     margin-right: 2px;
     color: lighten($gray, 15%);
     font-size: $font-size-sm;
-    &.filled { color: $brand-warning; }
+    &.filled { color: $warning; }
     &:last-child { margin-right: 0; }
   }
 }
@@ -235,7 +235,7 @@
       pointer-events: none;
       span,
       span::before,
-      span::after { background-color: $white-color; }
+      span::after { background-color: $white; }
     }
     &.grid-view span {
       &::before,
@@ -284,7 +284,7 @@
   }
   .remove-from-cart {
     display: inline-block;
-    color: $brand-danger;
+    color: $danger;
     font-size: $font-size-lead;
     line-height: 1;
     text-decoration: none;
@@ -444,7 +444,7 @@
     &:hover { color: $nav-link-hover-color; }
     &.active {
       background-color: $nav-link-active-color;
-      color: $white-color;
+      color: $white;
       cursor: default;
       pointer-events: none;
       > .angle::after { border-left-color: $nav-link-active-color; }
@@ -457,7 +457,7 @@
         right: 7px;
       }
       border-radius: 50%;
-      color: $brand-success;
+      color: $success;
       font-size: 18px;
       line-height: 20px;
       text-align: center;
@@ -522,7 +522,7 @@
       padding-left: 1px;
       border-radius: 50%;
       > i { font-size: 1.2em; }
-      &.active { color: $brand-danger; }
+      &.active { color: $danger; }
     }
   }
 }
@@ -578,7 +578,7 @@
         overflow: hidden;
       }
       &.active > a {
-        border-color: $brand-primary;
+        border-color: $primary;
         cursor: default;
       }
     }

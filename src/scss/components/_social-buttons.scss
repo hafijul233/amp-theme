@@ -110,7 +110,7 @@
 
 /* Email */
 .sb-email {
-  &:hover, &:focus { color: $brand-primary !important; }
+  &:hover, &:focus { color: $primary !important; }
 }
 
 /* Facebook */
@@ -272,12 +272,12 @@
 .sb-light-skin {
   transition: all .3s;
   background-color: transparent;
-  color: rgba($white-color, .6) !important;
-  &:hover, &:focus { color: $white-color !important; }
+  color: rgba($white, .6) !important;
+  &:hover, &:focus { color: $white !important; }
   &.shape-circle,
   &.shape-rounded,
   &.shape-square {
     border-color: $border-light-color;
-    &:hover { background-color: rgba($white-color, .06); }
+    &:hover { background-color: rgba($white, .06); }
   }
 }
