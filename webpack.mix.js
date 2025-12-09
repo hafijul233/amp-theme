@@ -9,9 +9,11 @@ mix.setPublicPath('assets')
     .options({processCssUrls: false})
     .minify(`assets/css/styles.css`)
     .sass(`src/vendor/bootstrap/bootstrap.scss`, `src/vendor/css/bootstrap.min.css`)
+    .sass(`src/vendor/select2/core.scss`, `src/vendor/css/select2.min.css`)
     .combine([
         `src/vendor/css/*.css`
     ], `assets/css/vendor.min.css`)
+    .copy('src/js/scripts.js', 'assets/js/scripts.min.js')
     .copy(`src/js/modernizr.min.js`, `assets/js/modernizr.min.js`)
     .copy(`src/js/card.min.js`, `assets/js/card.min.js`)
     .copy(`src/js/dataTable.json`, `assets/js/dataTable.json`)
