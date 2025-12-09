@@ -41,7 +41,7 @@
     height: 26px;
     padding: 0 12px;
     border-radius: 13px;
-    background-color: $white-color;
+    background-color: $white;
     color: $gray-dark;
     font-size: floor(($font-size-base / 1.33)); //~12px
     line-height: 26px;
@@ -71,7 +71,7 @@
       > img {
         display: block;
         width: 100%;
-        border: 5px solid $white-color;
+        border: 5px solid $white;
         border-radius: 50%;
       }
       .edit-avatar {
@@ -83,7 +83,7 @@
         height: $btn-sm-height;
         transition: opacity .3s;
         border-radius: 50%;
-        background-color: $white-color;
+        background-color: $white;
         color: $gray-dark;
         line-height: $btn-sm-height - 2;
         box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);

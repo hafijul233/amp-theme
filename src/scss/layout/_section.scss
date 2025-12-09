@@ -12,7 +12,7 @@
   }
 
   // Overlay
-  > .overlay { @include overlay-block(1, $black-color, .6); }
+  > .overlay { @include overlay-block(1, $black, .6); }
 
   // Content
   > .container,

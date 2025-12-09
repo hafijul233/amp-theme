@@ -4,7 +4,7 @@
 
 .list-group-item {
   border-color: $border-color;
-  background-color: $white-color;
+  background-color: $white;
   text-decoration: none;
   &:first-child {
     border-top-left-radius: $border-radius-lg;
@@ -53,7 +53,7 @@ a.list-group-item {
 
 // Badges
 .badge {
-  color: $white-color;
+  color: $white;
   font: {
     size: 90%;
     weight: 500;
@@ -62,47 +62,47 @@ a.list-group-item {
     background-color: lighten($gray-light, 3%);
     color: $gray-dark;
   }
-  &.badge-primary { background-color: $brand-primary; }
-  &.badge-info { background-color: $brand-info; }
-  &.badge-success { background-color: $brand-success; }
-  &.badge-warning { background-color: $brand-warning; }
-  &.badge-danger { background-color: $brand-danger; }
+  &.badge-primary { background-color: $primary; }
+  &.badge-info { background-color: $info; }
+  &.badge-success { background-color: $success; }
+  &.badge-warning { background-color: $warning; }
+  &.badge-danger { background-color: $danger; }
 }
 
 // Active state
 .list-group-item.active {
-  border-color: $brand-primary;
-  background-color: $brand-primary;
-  color: $white-color;
+  border-color: $primary;
+  background-color: $primary;
+  color: $white;
   cursor: default;
   pointer-events: none;
   h1, .h1, h2, .h2, h3, .h3,
-  h4, .h4, h5, .h5, h6, .h6 { color: $white-color; }
+  h4, .h4, h5, .h5, h6, .h6 { color: $white; }
   .badge {
-    background-color: $white-color !important;
+    background-color: $white !important;
     color: $gray-dark !important;
   }
 }
 
 // Contextual classes
 .list-group-item-info {
-  @include list-group-variant($brand-info, rgba($brand-info, .12));
+  @include list-group-variant($info, rgba($info, .12));
 }
 .list-group-item-success {
-  @include list-group-variant(darken($brand-success, 3%), rgba($brand-success, .12));
+  @include list-group-variant(darken($success, 3%), rgba($success, .12));
 }
 .list-group-item-warning {
-  @include list-group-variant(darken($brand-warning, 3%), rgba($brand-warning, .12));
+  @include list-group-variant(darken($warning, 3%), rgba($warning, .12));
 }
 .list-group-item-danger {
-  @include list-group-variant($brand-danger, rgba($brand-danger, .12));
+  @include list-group-variant($danger, rgba($danger, .12));
 }
 .list-group-item-action:hover,
 .list-group-item-action.active {
-  &.list-group-item-info { background-color: rgba($brand-info, .24); }
-  &.list-group-item-success { background-color: rgba($brand-success, .24); }
-  &.list-group-item-warning { background-color: rgba($brand-warning, .24); }
-  &.list-group-item-danger { background-color: rgba($brand-danger, .24); }
+  &.list-group-item-info { background-color: rgba($info, .24); }
+  &.list-group-item-success { background-color: rgba($success, .24); }
+  &.list-group-item-warning { background-color: rgba($warning, .24); }
+  &.list-group-item-danger { background-color: rgba($danger, .24); }
 }
 
 // Next to card

@@ -47,7 +47,7 @@ a {
   text-decoration: none;
   &:hover { color: $nav-link-hover-color; }
 }
-.navi-link-light { color: $white-color; }
+.navi-link-light { color: $white; }
 
 // Images
 // Responsive images (ensure images don't scale beyond their parents)
@@ -87,11 +87,11 @@ pre {
 // Text Selection Color
 ::selection {
   background: $gray-darker;
-  color: $white-color;
+  color: $white;
 }
 ::-moz-selection {
   background: $gray-darker;
-  color: $white-color;
+  color: $white;
 }
 
 

@@ -17,7 +17,7 @@
       width: 100%;
     }
     &::before {
-      @include overlay-block(1, $black-color, 0);
+      @include overlay-block(1, $black, 0);
       transition: opacity .3s;
     }
     &::after {
@@ -29,7 +29,7 @@
       margin-top: -19px;
       transform: translateY(15px);
       transition: all .35s;
-      color: $white-color;
+      color: $white;
       font: {
         family: feather;
         size: 26px;
@@ -58,11 +58,11 @@
         padding-left: 5px;
         transform: none;
         border-radius: 50%;
-        background-color: $white-color;
+        background-color: $white;
         color: $gray-dark;
         font-size: 27px;
         line-height: 42px;
-        box-shadow: 0px 4px 15px 0px rgba($black-color, .25);
+        box-shadow: 0px 4px 15px 0px rgba($black, .25);
         content: '\e052';
         opacity: 1;
       }
