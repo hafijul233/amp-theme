@@ -1,84 +1,50 @@
 const mix = require('laravel-mix');
 const execSync = require('child_process').execSync;
 
-const paths = {
-    assets: "assets",
-    src: "src",
-    assets_css: "assets/css",
-    assets_js: "assets/js",
-    src_js: "src/js",
-    src_css_vendor: "src/vendor/css",
-    bootstrap_scss: "src/vendor/bootstrap",
-};
+mix.setPublicPath('assets')
+    .setResourceRoot('src')
+    .copyDirectory(`src/fonts`, `assets/fonts`)
+    .copyDirectory(`src/img`, `assets/img`)
+    .sass(`src/scss/styles.scss`, `assets/css/styles.css`)
+    .options({processCssUrls: false})
+    .minify(`assets/css/styles.css`)
+    .sass(`src/vendor/bootstrap/bootstrap.scss`, `src/vendor/css/bootstrap.min.css`)
+    .combine([
+        `src/vendor/css/*.css`
+    ], `assets/css/vendor.min.css`)
+    .copy(`src/js/modernizr.min.js`, `assets/js/modernizr.min.js`)
+    .copy(`src/js/card.min.js`, `assets/js/card.min.js`)
+    .copy(`src/js/dataTable.json`, `assets/js/dataTable.json`)
+    .combine([
+        'src/vendor/js/jquery.min.js',
+        'src/vendor/js/popper.min.js',
+        'src/vendor/js/bootstrap.min.js',
+        'src/vendor/js/velocity.min.js',
+        'src/vendor/js/downCount.min.js',
+        'src/vendor/js/gmap3.min.js',
+        'src/vendor/js/imagesloaded.pkgd.min.js',
+        'src/vendor/js/isotope.pkgd.min.js',
+        'src/vendor/js/izitoast.min.js',
+        'src/vendor/js/nouislider.min.js',
+        'src/vendor/js/owl.carousel.min.js',
+        'src/vendor/js/photoswipe-ui-default.min.js',
+        'src/vendor/js/photoswipe.min.js',
+        'src/vendor/js/select2.full.min.js',
+        'src/vendor/js/jquery.dataTables.min.js',
+        'src/vendor/js/dataTables.bootstrap4.min.js'
 
-mix.setPublicPath(paths.assets);
-mix.setResourceRoot(paths.src);
-
-mix.copyDirectory(`${paths.src}/fonts`, `${paths.assets}/fonts`);
-mix.copyDirectory(`${paths.src}/img`, `${paths.assets}/img`);
-
-// Compile SCSS main
-mix.sass(`src/scss/styles.scss`, `${paths.assets_css}/styles.css`)
-   .options({ processCssUrls: false });
-mix.minify(`${paths.assets_css}/styles.css`);
-
-// Compile bootstrap
-mix.sass(`${paths.bootstrap_scss}/bootstrap.scss`, `${paths.src_css_vendor}/bootstrap.min.css`);
-
-// vendor css concat
-mix.combine([
-    `${paths.src_css_vendor}/*.css`
-], `${paths.assets_css}/vendor.min.css`);
-
-
-// scripts main minified
-mix.js(`${paths.src_js}/scripts.js`, `${paths.assets_js}/scripts.min.js`);
-mix.copy(`${paths.src_js}/modernizr.min.js`, `${paths.assets_js}/modernizr.min.js`);
-mix.copy(`${paths.src_js}/card.min.js`, `${paths.assets_js}/card.min.js`);
-mix.copy(`${paths.src_js}/dataTable.json`, `${paths.assets_js}/dataTable.json`);
-//mix.copy(`${paths.src_js}/vendor.min.js`, `${paths.assets_js}/vendor.min.js`);
-
-// vendor js concat
-// mix.combine([
-//     `${paths.src_js_vendor}/*.js`,
-// ], `${paths.assets_js}/vendor.min.js`);
-
-mix.combine([
-    'src/vendor/js/jquery.min.js',
-    'src/vendor/js/popper.min.js',
-    'src/vendor/js/bootstrap.min.js',
-    'src/vendor/js/velocity.min.js',
-    'src/vendor/js/downCount.min.js',
-    'src/vendor/js/gmap3.min.js',
-    'src/vendor/js/imagesloaded.pkgd.min.js',
-    'src/vendor/js/isotope.pkgd.min.js',
-    'src/vendor/js/izitoast.min.js',
-    'src/vendor/js/nouislider.min.js',
-    'src/vendor/js/owl.carousel.min.js',
-    'src/vendor/js/photoswipe-ui-default.min.js',
-    'src/vendor/js/photoswipe.min.js',
-    'src/vendor/js/select2.full.min.js',
-    'src/vendor/js/jquery.dataTables.min.js',
-    'src/vendor/js/dataTables.bootstrap4.min.js'
-
-], 'assets/js/vendor.min.js');
-
-
-// Pug compile
-mix.before(() => {
-    execSync(`pug src/templates --pretty --out ${paths.assets}`);
-});
-
-// browserSync
-mix.browserSync({
-    server: paths.assets,
-    files: [
-        `${paths.assets}/**/*.html`,
-        `${paths.assets_css}/*.css`,
-        `${paths.assets_js}/*.js`,
-    ],
-    browser: "google chrome",
-    open:false
-});
-
-mix.disableNotifications();
+    ], 'assets/js/vendor.min.js')
+    .before(() => {
+        execSync(`pug src/templates --pretty --out assets`);
+    })
+    .browserSync({
+        server: 'assets',
+        files: [
+            `assets/**/*.html`,
+            `assets/css/*.css`,
+            `assets/js/*.js`,
+        ],
+        browser: "google chrome",
+        open: false
+    })
+    .disableNotifications();
