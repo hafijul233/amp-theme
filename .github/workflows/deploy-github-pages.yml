@@ -34,10 +34,16 @@ jobs:
       - name: Build site
         run: npm run prod
 
+      - name: Copy to Docs
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          cp -R assets/* docs/
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: assets
+          path: docs
 
   deploy:
     needs: build
