@@ -1,0 +1,22 @@
+.icons-wrapper {
+  margin: 4px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  padding: 0.5rem;
+  text-align: center;
+  display: grid;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+
+  i {
+    margin-top: 0.5rem;
+    height: 1.5rem;
+    font-size: 175%;
+  }
+
+  span {
+    margin-top: 0.5rem;
+    display: block;
+    height: 42px;
+  }
+}

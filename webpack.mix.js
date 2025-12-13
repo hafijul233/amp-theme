@@ -2,17 +2,17 @@ const mix = require('laravel-mix');
 const path = require('path');
 const execSync = require('child_process').execSync;
 
-mix.sourceMaps()
+mix.sourceMaps(true)
     .setPublicPath('assets')
     .setResourceRoot('src')
     .copyDirectory(`src/fonts`, `assets/fonts`)
     .copyDirectory(`src/img`, `assets/img`)
     .sass(`src/scss/styles.scss`, `assets/css/styles.css`)
     .options({processCssUrls: false})
-    .minify(`assets/css/styles.css`)
+    .minify(`assets/css/styles.css`, `assets/css/styles.min.css`)
     .sass(`src/scss/vendor.scss`, `assets/css/vendor.css`)
     .options({processCssUrls: false})
-    .minify(`assets/css/vendor.css`)
+    .minify(`assets/css/vendor.css`, `assets/css/vendor.min.css`)
     .copy('src/js/scripts.js', 'assets/js/scripts.min.js')
     .copy(`src/js/modernizr.min.js`, `assets/js/modernizr.min.js`)
     .copy(`src/js/card.min.js`, `assets/js/card.min.js`)

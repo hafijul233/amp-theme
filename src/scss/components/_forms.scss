@@ -190,8 +190,7 @@ select.form-control.form-control-sm {
     &:focus ~ .input-group-addon { color: $primary; }
   }
   .input-group-btn {
-    right: 10px;
-    margin-top: -2px;
+    left: 10px;
     button {
       transition: color .3s;
       border: 0;
@@ -209,8 +208,8 @@ select.form-control.form-control-sm {
   }
   .input-group-btn ~ .form-control {
     padding: {
-      right: 35px;
-      left: 18px;
+      left: 35px;
+      right: 18px;
     }
   }
 }
