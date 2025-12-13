@@ -26,7 +26,7 @@ mix.sourceMaps(true)
         'src/vendor/js/gmap3.min.js',
         'src/vendor/js/imagesloaded.pkgd.min.js',
         'src/vendor/js/isotope.pkgd.min.js',
-        'src/vendor/js/izitoast.min.js',
+        'src/vendor/js/iziToast.min.js',
         'src/vendor/js/nouislider.min.js',
         'src/vendor/js/owl.carousel.min.js',
         'src/vendor/js/photoswipe-ui-default.min.js',
